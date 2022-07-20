@@ -1,0 +1,25 @@
+#breed-img{
+    width: 400px;
+    height: 400px;
+}
+
+#random-img{
+    width: 400px;
+    height: 400px;
+}
+body {
+    padding: 25px;
+    background-color:lavenderblush;
+    color: black;
+    font-size: 25px;
+}
+      
+.dark-mode {
+    background-color: black;
+    color:lightcoral;
+}
+
+
+
+
+

@@ -7,7 +7,7 @@ const randomBtn = document.getElementById("get-random").addEventListener("click"
 const searchBreedBtn = document.getElementById("get-breed").addEventListener("click", searchByBreed)
 const darkLightToggle = document.getElementById("dark-light").addEventListener("click", toggleDarkMode)
 
-
+//CALL BACK FUNCTIONS
 // get random dog picture
 // https://dog.ceo/api/breeds/image/random
 function getRandomDog(){
@@ -41,6 +41,9 @@ function getRandomDog(){
  // toggle dark mode
  function toggleDarkMode(){
     console.log("toggleDarkMode() runs")
+    const element = document.body;
+    element.classList.toggle("dark-mode");
+    
  }
 
 // TO DO
@@ -48,4 +51,3 @@ function getRandomDog(){
 // HANDLE IMAGE SIZING
 // BASIC CSS
 // IMAGE BY BREED SHOULD DISPLAY MULTIPLE IMAGES
-// IMPLEMENT/TOGGLE DARK MODE
