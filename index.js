@@ -2,6 +2,8 @@ document.getElementById("get-random").addEventListener("click", getRandomDog);
 document.getElementById("get-breed").addEventListener("click", searchByBreed);
 document.getElementById("dark-light").addEventListener("click", toggleDarkMode);
 document.getElementById("h1").addEventListener("mouseenter", mouseEnter);
+document.getElementById("h1").addEventListener("mouseleave", mouseLeave);
+
 function getRandomDog() {
   //clear previous image, if any
   document.getElementById("rando").replaceChildren();
@@ -17,6 +19,7 @@ function getRandomDog() {
       randoContainer.append(img);
     });
 }
+
 function searchByBreed() {
   //clear previous image, if any
   document.getElementById("breed").replaceChildren();
@@ -46,14 +49,21 @@ function searchByBreed() {
       }
     });
 }
+
 function toggleDarkMode() {
   const element = document.body;
   element.classList.toggle("dark-mode");
 }
+
 function mouseEnter() {
   console.log("enter the mouse");
   const div = document.getElementById("mouse");
   const paragraph = document.createElement("p");
   paragraph.textContent = "FIND DOGGIES!";
   div.append(paragraph);
+}
+
+function mouseLeave() {
+  console.log("leave the mouse");
+  document.getElementById("mouse").replaceChildren();
 }
