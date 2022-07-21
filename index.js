@@ -50,3 +50,10 @@ function toggleDarkMode() {
   const element = document.body;
   element.classList.toggle("dark-mode");
 }
+function mouseEnter() {
+  console.log("enter the mouse");
+  const div = document.getElementById("mouse");
+  const paragraph = document.createElement("p");
+  paragraph.textContent = "FIND DOGGIES!";
+  div.append(paragraph);
+}
