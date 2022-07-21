@@ -45,3 +45,7 @@ function searchByBreed() {
       }
     });
 }
+function toggleDarkMode() {
+  const element = document.body;
+  element.classList.toggle("dark-mode");
+}
