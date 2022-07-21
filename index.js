@@ -16,15 +16,31 @@ function getRandomDog() {
     });
 }
 function searchByBreed() {
-    //clear previous image, if any
-    document.getElementById("breed").replaceChildren();
-    //grab input value
-    const searchInput = document.getElementById("search-input").value;
-    console.log(searchInput);
-    const breed = document.getElementById("breed");
-    //get images by breed
-    fetch(`https://dog.ceo/api/breed/${searchInput}/images`)
-      .then((response) => response.json())
-      .then((data) => {
-        console.log(data);
-        //console.log(data.message)
+  //clear previous image, if any
+  document.getElementById("breed").replaceChildren();
+  //grab input value
+  const searchInput = document.getElementById("search-input").value;
+  console.log(searchInput);
+  const breed = document.getElementById("breed");
+  //get images by breed
+  fetch(`https://dog.ceo/api/breed/${searchInput}/images`)
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+      //console.log(data.message)
+      if (data.status === "success") {
+        data.message.forEach((element, index) => {
+          if (index <= 2) {
+            const img = document.createElement("img");
+            img.src = element;
+            breed.append(img);
+          }
+        });
+      } else {
+        console.log("inside else condition");
+        const message = document.createElement("p");
+        message.textContent = "BREED NOT FOUND";
+        breed.append(message);
+      }
+    });
+}
