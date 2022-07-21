@@ -1,6 +1,7 @@
 document.getElementById("get-random").addEventListener("click", getRandomDog);
 document.getElementById("get-breed").addEventListener("click", searchByBreed);
 document.getElementById("dark-light").addEventListener("click", toggleDarkMode);
+document.getElementById("h1").addEventListener("mouseenter", mouseEnter);
 function getRandomDog() {
   //clear previous image, if any
   document.getElementById("rando").replaceChildren();
