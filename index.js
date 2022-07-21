@@ -1,56 +1,17 @@
-//https://dog.ceo/dog-api/documentation/
-//document.getElementById("myBtn").addEventListener("click", displayDate);
+document.getElementById("get-random").addEventListener("click", getRandomDog);
 
-// EVENT LISTENERS
-const randomBtn = document
-  .getElementById("get-random")
-  .addEventListener("click", getRandomDog);
-const searchBreedBtn = document
-  .getElementById("get-breed")
-  .addEventListener("click", searchByBreed);
-const darkLightToggle = document
-  .getElementById("dark-light")
-  .addEventListener("click", toggleDarkMode);
-
-//CALL BACK FUNCTIONS
-// get random dog picture
-// https://dog.ceo/api/breeds/image/random
 function getRandomDog() {
-  // get random img from api
-  fetch("https://dog.ceo/api/breeds/image/random")
+  //clear previous image, if any
+  document.getElementById("rando").replaceChildren();
+  const randoContainer = document.getElementById("rando");
+  //get random img from API
+  fetch("https://dog.ceo/api/breed/hound/afghan/images/random")
     .then((response) => response.json())
     .then((data) => {
       console.log(data);
       //display image in DOM
-      document.getElementById("random-img").src = data.message;
+      const img = document.createElement("img");
+      img.src = data.message;
+      randoContainer.append(img);
     });
 }
-
-// search by breed
-//  https://dog.ceo/api/breed/hound/images
-function searchByBreed() {
-  // Grab input value
-  const searchInput = document.getElementById("search-input").value;
-  console.log(searchInput);
-
-  // get  images by breed
-  fetch(`https://dog.ceo/api/breed/${searchInput}/images`)
-    .then((response) => response.json())
-    .then((data) => {
-      console.log(data);
-      document.getElementById("breed-img").src = data.message[0];
-    });
-}
-
-// toggle dark mode
-function toggleDarkMode() {
-  console.log("toggleDarkMode() runs");
-  const element = document.body;
-  element.classList.toggle("dark-mode");
-}
-
-// TO DO
-// ADD ERROR HANDLING TO SEARCH BY BREED FUNCTION
-// HANDLE IMAGE SIZING
-// BASIC CSS
-// IMAGE BY BREED SHOULD DISPLAY MULTIPLE IMAGES
