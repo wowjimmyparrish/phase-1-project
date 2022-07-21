@@ -16,7 +16,7 @@ body {
   border: 1px solid #c2b6b6;
   display: flex;
   flex-wrap: wrap;
-  min-height: 100px;
+  min-height: 200px;
   justify-content: center;
   align-items: center;
   margin: 20px;
