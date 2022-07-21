@@ -1,5 +1,5 @@
 document.getElementById("get-random").addEventListener("click", getRandomDog);
-
+document.getElementById("get-breed").addEventListener("click", searchByBreed);
 function getRandomDog() {
   //clear previous image, if any
   document.getElementById("rando").replaceChildren();
